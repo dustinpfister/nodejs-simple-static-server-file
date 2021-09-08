@@ -100,15 +100,6 @@ let createDirInfo = (pInfo) => {
             pInfo.contents = contents;
             pInfo.mime = 'text/html';
             pInfo.html = createHTML(pInfo);
-/*
-            pInfo.html = '<html><head><title>Index of - ' + pInfo.url + '</title></head><body>';
-            pInfo.mime = 'text/html';
-            pInfo.contents.forEach((itemName)=>{
-                let itemURL = pInfo.url + '/' + itemName;
-                pInfo.html += '<a href=\"' + itemURL + '\" >' +  itemName + '</a><br>'
-            });
-            pInfo.html += '</body></html>';
-*/
         }
         return pInfo;
     });
