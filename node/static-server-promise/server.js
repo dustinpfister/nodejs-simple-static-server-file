@@ -68,11 +68,13 @@ let createPathInfoObject = (url) => {
 
 // create an html index of a folder
 let createHTML = (pInfo) => {
-    var html = '<html><head><title>Index of - ' + pInfo.url + '</title></head><body>';
+    var html = '<html><head><title>Index of - ' + pInfo.url + '</title>'+
+    '<style>body{padding:20px;background:#afafaf;font-family:arial;}div{display: inline-block;padding:10px;}</style>' +
+    '</head><body>';
     html += '<h3>Contents of : ' + pInfo.url + '</h3>'
     pInfo.contents.forEach((itemName)=>{
         let itemURL = pInfo.url + '/' + itemName;
-        html += '<a href=\"' + itemURL + '\" >' +  itemName + '</a><br>'
+        html += '<div> <a href=\"' + itemURL + '\" >' +  itemName + '</a> </div>'
     });
     html += '</body></html>';
     return html;
